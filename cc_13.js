@@ -31,8 +31,22 @@ card.appendChild(removeButton);
 const employeeContainer = document.getElementById('employee-container');
 employeeContainer.appendChild(card);
 }
-// Example usage: Creating a new employee card
+// Example usage: Creating a new employ
+ee card
 // Call the function when you need to create a new employee card
 createEmployeeCard('John Doe', 'Software Engineer');
 createEmployeeCard('Jane Smith', 'Product Manager');
 createEmployeeCard('Sam Johnson', 'Designer');
+
+// task 3 
+function highlight employeeCards () {
+const employeeCards = document.querySelectAll('.employee-card');
+
+const cardsArray = Array.from(employeeCards);
+
+cardsArray.forEach(card => {
+  card.style.backgroundColor = 'Royalblue';
+  card.style.border = '2px solid #000';
+});
+}
+updateEmployeeCards();
