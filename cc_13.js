@@ -50,3 +50,16 @@ cardsArray.forEach(card => {
 });
 }
 updateEmployeeCards();
+// task 4
+function setupEventListeners() {
+  const employeeContainer = document.getElementById('employeeContainer');
+
+employeeContainer.addEventListener('click', (event) => {
+  if (event.target.tagName === 'BUTTON') {
+    const cardToRemove = event.target.closest('.employee-card');
+    cardToRemove.remove();
+  }
+  consol.log('An employee card was clicked!');
+});
+}
+document.addEventListener('DOMContentLoaded', setupEventListeners);
