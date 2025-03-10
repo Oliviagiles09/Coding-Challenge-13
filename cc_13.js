@@ -63,3 +63,31 @@ employeeContainer.addEventListener('click', (event) => {
 });
 }
 document.addEventListener('DOMContentLoaded', setupEventListeners);
+// Task 5
+function enableInlineEditing() {
+  const employeeContainer = document.getElementById('employeeContainer');
+
+employeeContainer.addEventListener('dblclick', (event) => {
+  const card = event.target.closest('.employee-card');
+  if (!card) return;
+const nameElement = card.querySelector('h2');
+  const positionelement = card.querySelector('p');
+
+  const nameElement = document.createElement('input');
+  nameInput.value = nameElement.textContent;
+  const positionInput = document.createElement('input');
+  positionInput.value = positionElement.textContent;
+  const saveButton = document.createElement('button');
+        saveButton.textContent = 'Save';
+        card.appendChild(saveButton);
+
+        saveButton.addEventListener('click', () => {
+            nameElement.textContent = nameInput.value;
+            positionElement.textContent = positionInput.value;
+
+            card.replaceChild(nameElement, nameInput);
+            card.replaceChild(positionElement, positionInput);
+            saveButton.remove();
+        });
+    });
+}
